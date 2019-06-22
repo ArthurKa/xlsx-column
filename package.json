@@ -1,0 +1,18 @@
+{
+  "name": "xlsx-column",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurKa/xlsx-column.git"
+  },
+  "keywords": [],
+  "author": "ArthurKa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthurKa/xlsx-column/issues"
+  },
+  "homepage": "https://github.com/ArthurKa/xlsx-column#readme"
+}
