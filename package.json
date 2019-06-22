@@ -2,7 +2,7 @@
   "name": "xlsx-column",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {},
   "repository": {
     "type": "git",
@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/ArthurKa/xlsx-column/issues"
   },
-  "homepage": "https://github.com/ArthurKa/xlsx-column#readme"
+  "homepage": "https://github.com/ArthurKa/xlsx-column#readme",
+  "devDependencies": {
+    "mocha": "^6.1.4"
+  }
 }
