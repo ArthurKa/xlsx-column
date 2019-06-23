@@ -60,7 +60,7 @@ function Checks() {
       checks.hasLettersOnly(s);
       checks.isNumber(n);
       checks.isInteger(n);
-      let column = toNumber(s);
+      let column = toNumber(s.toUpperCase());
       checks.isPositive(column + n, 'result');
       return column;
     };
