@@ -1,7 +1,7 @@
 {
   "name": "xlsx-column",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Helps to work with *.xlsx column names",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha test"
@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/ArthurKa/xlsx-column.git"
   },
-  "keywords": [],
+  "keywords": [
+    "xlsx table",
+    "xlsx column",
+    "Excel"
+  ],
   "author": "ArthurKa",
   "license": "ISC",
   "bugs": {
