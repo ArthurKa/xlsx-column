@@ -13,12 +13,12 @@ function Checks() {
   };
   this.isString = p => {
     if(typeof p !== 'string') {
-      throw new Error('The parameter should be String type');
+      throw new Error('The parameter should be only String type');
     }
   };
   this.isNumber = p => {
     if(typeof p !== 'number') {
-      throw new Error('The parameter should be Number type');
+      throw new Error('The parameter should be only Number type');
     }
   };
   this.isInteger = n => {
