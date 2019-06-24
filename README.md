@@ -18,20 +18,20 @@ column.incColumn();  // increment by 1
 console.log(column.toString());  // AA
 console.log(+column);  // 27
 
-// Chaining
+// Chaining is also possible
 console.log(column.decColumn(15).toString());  // L
 ```
 ``` js
 const XLSXColumn = require('xlsx-column');
 
-// String constructor parameter
+// Number constructor parameter
 const column = new XLSXColumn(26);  // 'Z' column
 
 column.incColumn();  // increment by 1
 console.log(column.toString());  // AA
 console.log(+column);  // 27
 
-// Chaining
+// Chaining is also possible
 console.log(column.decColumn(15).toString());  // L
 ```
 
@@ -42,9 +42,10 @@ const { incColumn, decColumn, numToColumn } = require('xlsx-column');
 console.log(numToColumn(2**14));  // XFD (max Excel column)
 console.log(numToColumn(10e9));  // AFIPYQJP (even more)
 
-console.log(incColumn('ax'));  // AY
-console.log(incColumn('ax', 4)); // BB
+console.log(incColumn('AX'));  // AY
+console.log(incColumn('AX', 4)); // BB
 
+// Capital letters are not necessary
 console.log(decColumn('ay'));  // AX
 console.log(decColumn('bb', 4)); // AX
 ```
