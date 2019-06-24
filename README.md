@@ -27,7 +27,7 @@ const XLSXColumn = require('xlsx-column');
 // Number constructor parameter
 const column = new XLSXColumn(26);  // 'Z' column
 
-column.incColumn(4);  // increment by 1
+column.incColumn(4);  // increment by 4
 console.log(column.toString());  // AD
 console.log(+column);  // 30
 
