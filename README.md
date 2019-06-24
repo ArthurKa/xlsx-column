@@ -27,12 +27,12 @@ const XLSXColumn = require('xlsx-column');
 // Number constructor parameter
 const column = new XLSXColumn(26);  // 'Z' column
 
-column.incColumn();  // increment by 1
-console.log(column.toString());  // AA
-console.log(+column);  // 27
+column.incColumn(4);  // increment by 1
+console.log(column.toString());  // AD
+console.log(+column);  // 30
 
 // Chaining is also possible
-console.log(column.decColumn(15).toString());  // L
+console.log(column.decColumn().toString());  // AC
 ```
 
 ### Static methods with lost *this* context
