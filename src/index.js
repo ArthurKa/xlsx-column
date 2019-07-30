@@ -19,7 +19,7 @@ function XLSXColumn(p) {
 }
 
 XLSXColumn.incColumn = function(s, n = 1) {
-  let column = checks.combine.forAction(s, n);
+  const column = checks.combine.forAction(s, n);
   return toString(column + n);
 }
 XLSXColumn.decColumn = function(s, n = 1) {

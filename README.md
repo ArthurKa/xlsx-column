@@ -7,7 +7,7 @@ $ npm i xlsx-column
 ```
 
 ## Usage
-### Class instance
+### Class instance:
 ``` js
 const XLSXColumn = require('xlsx-column');
 
@@ -35,7 +35,7 @@ console.log(+column);  // 30
 console.log(column.decColumn().toString());  // AC
 ```
 
-### Static methods with lost *this* context
+### Static methods with lost *this* context:
 ``` js
 const { incColumn, decColumn, numToColumn } = require('xlsx-column');
 

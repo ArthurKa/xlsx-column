@@ -41,8 +41,8 @@ function Checks() {
       throw new Error('The string should contain letters only');
     }
   };
-  this.combine = new function() {
-    this.forConstructor = p => {
+  this.combine = {
+    forConstructor(p) {
       const type = checks.strOrNum(p);
       if(type === 'str') {
         checks.stringNotEmpty(p);
@@ -53,17 +53,17 @@ function Checks() {
         checks.isPositive(p);
       }
       return p;
-    };
-    this.forAction = (s, n) => {
+    },
+    forAction(s, n) {
       checks.isString(s);
       checks.stringNotEmpty(s);
       checks.hasLettersOnly(s);
       checks.isNumber(n);
       checks.isInteger(n);
-      let column = toNumber(s.toUpperCase());
+      const column = toNumber(s.toUpperCase());
       checks.isPositive(column + n, 'result');
       return column;
-    };
+    },
   };
 }
 
