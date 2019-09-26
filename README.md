@@ -54,3 +54,5 @@ console.log(decColumn('bb', 4)); // AX
 ``` bash
 $ npm test
 ```
+
+Your improve suggestions and bug reports are welcome any time.
