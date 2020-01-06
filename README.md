@@ -1,3 +1,5 @@
+# xlsx-column
+
 Helps you to work with *.xlsx column names such as `Z`, `AA`, `AAB`, etc.
 
 ## Installation
@@ -54,5 +56,7 @@ console.log(decColumn('bb', 4)); // AX
 ``` bash
 $ npm test
 ```
+
+---
 
 Your improve suggestions and bug reports are welcome any time.
