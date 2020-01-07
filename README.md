@@ -1,11 +1,17 @@
-# xlsx-column
+# xlsx-column@1.0.8
+
+[![Dependencies](https://img.shields.io/librariesio/release/npm/xlsx-column/1.0.8)](https://libraries.io/npm/xlsx-column/1.0.8)
+[![Vulnerabilities](https://snyk.io/test/npm/xlsx-column/1.0.8/badge.svg)](https://snyk.io/test/npm/xlsx-column/1.0.8)
+[![Install size](https://packagephobia.now.sh/badge?p=xlsx-column@1.0.8)](https://packagephobia.now.sh/result?p=xlsx-column@1.0.8)
+[![NPM-version](https://img.shields.io/badge/npm-v1.0.8-blue.svg)](https://www.npmjs.com/package/xlsx-column/v/1.0.8)
+[![Total downloads](https://img.shields.io/npm/dt/xlsx-column?label=total%20downloads)](https://npm-stat.com/charts.html?package=xlsx-column)
 
 Helps you to work with *.xlsx column names such as `Z`, `AA`, `AAB`, etc.
 
 ## Installation
 `xlsx-column` is available via npm:
 ``` bash
-$ npm i xlsx-column
+$ npm i xlsx-column@1.0.8
 ```
 
 ## Usage
