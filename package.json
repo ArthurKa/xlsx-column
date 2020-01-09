@@ -11,9 +11,14 @@
     "url": "git+https://github.com/ArthurKa/xlsx-column.git"
   },
   "keywords": [
+    "xlsx",
+    "Excel",
     "xlsx table",
+    "Excel table",
+    "xlsx sheet",
+    "Excel sheet",
     "xlsx column",
-    "Excel"
+    "Excel column"
   ],
   "author": "ArthurKa",
   "license": "ISC",

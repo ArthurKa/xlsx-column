@@ -1,12 +1,12 @@
 [![All dependencies](https://img.shields.io/librariesio/release/npm/xlsx-column/1.0.9?label=all%20dependencies)](https://libraries.io/npm/xlsx-column/1.0.9)
-[![Vulnerabilities](https://snyk.io/test/npm/xlsx-column/1.0.9/badge.svg)](https://snyk.io/test/npm/xlsx-column/1.0.9)
-[![Install size](https://packagephobia.now.sh/badge?p=xlsx-column@1.0.9)](https://packagephobia.now.sh/result?p=xlsx-column@1.0.9)
+[![Known vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/xlsx-column@1.0.9?label=known%20vulnerabilities)](https://snyk.io/test/npm/xlsx-column/1.0.9)
 [![NPM-version](https://img.shields.io/badge/npm-v1.0.9-blue.svg)](https://www.npmjs.com/package/xlsx-column/v/1.0.9)
+[![Install size](https://packagephobia.now.sh/badge?p=xlsx-column@1.0.9)](https://packagephobia.now.sh/result?p=xlsx-column@1.0.9)
 [![Total downloads](https://img.shields.io/npm/dt/xlsx-column?label=total%20downloads)](https://npm-stat.com/charts.html?package=xlsx-column)
 
 # xlsx-column@1.0.9
 
-Helps you to work with *.xlsx column names such as `Z`, `AA`, `AAB`, etc.
+Helps you to work with *.xlsx column names such as `A`, `Z`, `AA`, `AAB`, etc.
 
 ## Installation
 `xlsx-column` is available via npm:
@@ -47,8 +47,8 @@ console.log(column.decColumn().toString());  // AC
 ``` js
 const { incColumn, decColumn, numToColumn } = require('xlsx-column');
 
-console.log(numToColumn(2**14));  // XFD (max Excel column)
-console.log(numToColumn(10e9));  // AFIPYQJP (even more)
+console.log(numToColumn(2**14));  // XFD (max Excel column number)
+console.log(numToColumn(10e9));  // AFIPYQJP (and even more)
 
 console.log(incColumn('AX'));  // AY
 console.log(incColumn('AX', 4)); // BB
