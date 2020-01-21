@@ -1,17 +1,17 @@
-[![All dependencies](https://img.shields.io/librariesio/release/npm/xlsx-column/1.0.10?label=all%20dependencies)](https://libraries.io/npm/xlsx-column/1.0.10)
-[![Known vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/xlsx-column@1.0.10?label=known%20vulnerabilities)](https://snyk.io/test/npm/xlsx-column/1.0.10)
-[![NPM-version](https://img.shields.io/badge/npm-v1.0.10-blue.svg)](https://www.npmjs.com/package/xlsx-column/v/1.0.10)
-[![Install size](https://packagephobia.now.sh/badge?p=xlsx-column@1.0.10)](https://packagephobia.now.sh/result?p=xlsx-column@1.0.10)
-[![Total downloads](https://img.shields.io/npm/dt/xlsx-column?label=total%20downloads)](https://npm-stat.com/charts.html?package=xlsx-column)
+[![All dependencies](https://img.shields.io/librariesio/release/npm/xlsx-column/1.0.11?style=flat-square "All dependencies of xlsx-column@1.0.11")](https://libraries.io/npm/xlsx-column/1.0.11)
+[![Reported vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/xlsx-column@1.0.11?style=flat-square "Reported vulnerabilities of xlsx-column@1.0.11")](https://snyk.io/test/npm/xlsx-column/1.0.11)
+[![NPM-version](https://img.shields.io/badge/npm-v1.0.11-blue.svg?style=flat-square "Current NPM-version")](https://www.npmjs.com/package/xlsx-column/v/1.0.11)
+[![Install size](https://flat.badgen.net/packagephobia/install/xlsx-column@1.0.11?label=size 'Install size of xlsx-column@1.0.11')](https://packagephobia.now.sh/result?p=xlsx-column@1.0.11)
+[![Total downloads](https://img.shields.io/npm/dt/xlsx-column?style=flat-square "Total downloads for all the time")](https://npm-stat.com/charts.html?package=xlsx-column)
 
-# xlsx-column@1.0.10
+# xlsx-column@1.0.11
 
 Helps you to work with *.xlsx column names such as `A`, `Z`, `AA`, `AAB`, etc.
 
 ## Installation
 `xlsx-column` is available via npm:
 ``` bash
-$ npm i xlsx-column@1.0.10
+$ npm i xlsx-column@1.0.11
 ```
 
 ## Usage
