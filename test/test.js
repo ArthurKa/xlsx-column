@@ -1,18 +1,19 @@
 'use strict';
 
 const assert = require('assert');
-const XLSXColumn = require('../src');
+const XLSXColumn = require('..');
 
 const className = 'XLSXColumn';
 
 const staticMethods = [
-  'incColumn',
-  'decColumn',
-  'numToColumn',
+  ['incColumn', 'string', ['X', 10]],
+  ['decColumn', 'string', ['X', 10]],
+  ['numToColumn', 'string', [10]],
+  ['colToNumber', 'number', ['X']],
 ];
 const instanceMethods = [
-  'incColumn',
-  'decColumn',
+  'inc',
+  'dec',
 ];
 const actionTestCases = [
   ['A', , 'B', 1, 2],
@@ -26,6 +27,12 @@ const actionTestCases = [
   ['Z', -1, 'Y', 26, 25],
   ['ZY', -4, 'ZU', 701, 697],
 ];
+const loopCases = [
+  ['A', 'A', ['A']],
+  ['A', 'B', ['A', 'B']],
+  ['Z', 'AB', ['Z', 'AA', 'AB']],
+  ['ZX', 'AAC', ['ZX', 'ZY', 'ZZ', 'AAA', 'AAB', 'AAC']],
+];
 
 describe('Basic types', () => {
   it(`${className} should be a function`, () => {
@@ -33,7 +40,7 @@ describe('Basic types', () => {
   });
 });
 describe('Basic methods', () => {
-  for(const method of staticMethods) {
+  for(const [method] of staticMethods) {
     it(`class ${className} should contain static method "${method}"`, () => {
       assert.strictEqual(typeof XLSXColumn[method], 'function');
     });
@@ -47,14 +54,9 @@ describe('Basic methods', () => {
   }
 });
 describe('Basic types', () => {
-  for(const method of staticMethods.slice(0, 2)) {
-    it(`static method "${method}" should return string`, () => {
-      assert.strictEqual(typeof XLSXColumn[method]('X', 10), 'string');
-    });
-  }
-  for(const method of staticMethods.slice(2)) {
-    it(`static method "${method}" should return string`, () => {
-      assert.strictEqual(typeof XLSXColumn[method](10), 'string');
+  for(const [method, res, args] of staticMethods) {
+    it(`static method "${method}" should return ${res}`, () => {
+      assert.strictEqual(typeof XLSXColumn[method](...args), res);
     });
   }
 
@@ -99,43 +101,62 @@ describe('Basic behaviour of static methods', () => {
       });
     }
   });
+  describe(`${className}.colToNumber`, () => {
+    const actionTestCases = [
+      ['A', 1],
+      ['G', 7],
+      ['Z', 26],
+      ['AA', 27],
+      ['IKN', 6384],
+      ['LOL', 8514],
+      ['KEK', 7577],
+      ['WWW', 16169],
+      ['XFD', 2**14, '2^14'],
+      ['CFDGSXL', 1e9, '10^9'],
+    ];
+    for(const [val, res, resStr] of actionTestCases) {
+      it(`${className}.colToNumber(${val}) equals ${resStr || res}`, () => {
+        assert.strictEqual(XLSXColumn.colToNumber(val), res);
+      });
+    }
+  });
 });
 describe('Basic behaviour of instance methods', () => {
-  describe('new XLSXColumn(<string>).incColumn', () => {
+  describe('new XLSXColumn(<string>).inc', () => {
     for(const [sVal, add, sRes, , nRes] of actionTestCases) {
-      it(`new XLSXColumn('${sVal}').incColumn(${add == null ? '' : add}) equals '${sRes}' and ${nRes}`, () => {
+      it(`new XLSXColumn('${sVal}').inc(${add == null ? '' : add}) equals '${sRes}' and ${nRes}`, () => {
         const column = new XLSXColumn(sVal);
-        column.incColumn(add);
+        column.inc(add);
         assert.strictEqual(column.toString(), sRes);
         assert.strictEqual(+column, nRes);
       });
     }
   });
-  describe('new XLSXColumn(<number>).incColumn', () => {
+  describe('new XLSXColumn(<number>).inc', () => {
     for(const [, add, sRes, nVal, nRes] of actionTestCases) {
-      it(`new XLSXColumn(${nVal}).incColumn(${add == null ? '' : add}) equals '${sRes}' and ${nRes}`, () => {
+      it(`new XLSXColumn(${nVal}).inc(${add == null ? '' : add}) equals '${sRes}' and ${nRes}`, () => {
         const column = new XLSXColumn(nVal);
-        column.incColumn(add);
+        column.inc(add);
         assert.strictEqual(column.toString(), sRes);
         assert.strictEqual(+column, nRes);
       });
     }
   });
-  describe('new XLSXColumn(<string>).decColumn', () => {
+  describe('new XLSXColumn(<string>).dec', () => {
     for(const [sRes, dec, sVal, nRes] of actionTestCases) {
-      it(`new XLSXColumn('${sVal}').decColumn(${dec == null ? '' : dec}) equals '${sRes}' and ${nRes}`, () => {
+      it(`new XLSXColumn('${sVal}').dec(${dec == null ? '' : dec}) equals '${sRes}' and ${nRes}`, () => {
         const column = new XLSXColumn(sVal);
-        column.decColumn(dec);
+        column.dec(dec);
         assert.strictEqual(column.toString(), sRes);
         assert.strictEqual(+column, nRes);
       });
     }
   });
-  describe('new XLSXColumn(<number>).decColumn', () => {
+  describe('new XLSXColumn(<number>).dec', () => {
     for(const [sRes, dec, , nRes, nVal] of actionTestCases) {
-      it(`new XLSXColumn(${nVal}).decColumn(${dec == null ? '' : dec}) equals '${sRes}' and ${nRes}`, () => {
+      it(`new XLSXColumn(${nVal}).dec(${dec == null ? '' : dec}) equals '${sRes}' and ${nRes}`, () => {
         const column = new XLSXColumn(nVal);
-        column.decColumn(dec);
+        column.dec(dec);
         assert.strictEqual(column.toString(), sRes);
         assert.strictEqual(+column, nRes);
       });
@@ -220,6 +241,34 @@ describe('Static methods with lost *this* context', () => {
     for(const [val, res, valStr, msg] of actionTestCases) {
       it(`numToColumn(${valStr || val}) equals ${res}${msg ? ` (${msg})`: ''}`, () => {
         assert.strictEqual(numToColumn(val), res);
+      });
+    }
+  });
+});
+describe('Ranges', () => {
+  describe('Basic "for" loop', () => {
+    for(const [from, to, res] of loopCases) {
+      describe(`Range ${from}..${to}`, () => {
+        for(let column = new XLSXColumn(from), i = 0; column <= new XLSXColumn(to); column.inc(), i++) {
+          const col = column.toString();
+          it(res[i], () => {
+            assert.strictEqual(col, res[i]);
+          });
+        }
+      });
+    }
+  });
+  describe('XLSXColumn.range based on iterator', () => {
+    for(const [from, to, res] of loopCases) {
+      describe(`Range ${from}..${to}`, () => {
+        let i = 0;
+        for(const column of XLSXColumn.range(from, to)) {
+          const col = column.toString();
+          let j = i++;
+          it(res[j], () => {
+            assert.strictEqual(col, res[j]);
+          });
+        }
       });
     }
   });
