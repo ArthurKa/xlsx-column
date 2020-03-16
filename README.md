@@ -1,17 +1,17 @@
-[![All dependencies](https://img.shields.io/librariesio/release/npm/xlsx-column/2.0.0?style=flat-square "All dependencies of xlsx-column@2.0.0")](https://libraries.io/npm/xlsx-column/2.0.0)
-[![Reported vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/xlsx-column@2.0.0?style=flat-square "Reported vulnerabilities of xlsx-column@2.0.0")](https://snyk.io/test/npm/xlsx-column/2.0.0)
-[![NPM-version](https://img.shields.io/badge/npm-v2.0.0-blue.svg?style=flat-square&&logo=npm "Current NPM-version")](https://www.npmjs.com/package/xlsx-column/v/2.0.0)
-[![Install size](https://flat.badgen.net/packagephobia/install/xlsx-column@2.0.0?label=size 'Install size of xlsx-column@2.0.0')](https://packagephobia.now.sh/result?p=xlsx-column@2.0.0)
+[![All dependencies](https://img.shields.io/librariesio/release/npm/xlsx-column/2.0.1?style=flat-square "All dependencies of xlsx-column@2.0.1")](https://libraries.io/npm/xlsx-column/2.0.1)
+[![Reported vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/xlsx-column@2.0.1?style=flat-square "Reported vulnerabilities of xlsx-column@2.0.1")](https://snyk.io/test/npm/xlsx-column/2.0.1)
+[![NPM-version](https://img.shields.io/badge/npm-v2.0.1-blue.svg?style=flat-square&&logo=npm "Current NPM-version")](https://www.npmjs.com/package/xlsx-column/v/2.0.1)
+[![Install size](https://flat.badgen.net/packagephobia/install/xlsx-column@2.0.1?label=size 'Install size of xlsx-column@2.0.1')](https://packagephobia.now.sh/result?p=xlsx-column@2.0.1)
 [![Total downloads](https://img.shields.io/npm/dt/xlsx-column?style=flat-square "Total downloads for all the time")](https://npm-stat.com/charts.html?package=xlsx-column)
 
-# xlsx-column@2.0.0
+# xlsx-column@2.0.1
 
 With `xlsx-column` you are convenient to operate with *.xlsx column names such as `A`, `Z`, `AA`, `AAB`, etc.
 
 ## Installation
 `xlsx-column` is available via npm:
 ``` bash
-$ npm i xlsx-column@2.0.0
+$ npm i xlsx-column@2.0.1
 ```
 
 ## Usage
@@ -62,7 +62,7 @@ console.log(decColumn('bb', 4));  // AX
 ```
 
 ### Loops:
-```js
+``` js
 const XLSXColumn = require('xlsx-column');
 
 for(const column = new XLSXColumn('ZY'); column <= new XLSXColumn('AAC'); column.inc()) {
@@ -79,7 +79,7 @@ for(const column = new XLSXColumn('ZY'); column <= new XLSXColumn('AAC'); column
 ```
 
 ### Using XLSXColumn.range method based on iterator:
-```js
+``` js
 const { range } = require('xlsx-column');
 
 for(const column of range('ZY', 'AAC')) {

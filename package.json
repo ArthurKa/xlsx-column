@@ -1,6 +1,6 @@
 {
   "name": "xlsx-column",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Helps to work with *.xlsx column names.",
   "main": "src/index.js",
   "scripts": {

@@ -5,19 +5,27 @@ const { toNumber } = require('./utils.js');
 function Checks() {
   const checks = this;
   this.strOrNum = p => {
-    const index = ['string', 'number'].indexOf(typeof p);
-    if(index === -1) {
+    let res;
+    try {
+      this.isString(p);
+      res = 'str';
+    } catch(e) {}
+    try {
+      this.isNumber(p);
+      res = 'num';
+    } catch(e) {}
+    if(!res) {
       throw new Error('The parameter should be one of type String or Number');
     }
-    return index === 0 ? 'str' : 'num';
+    return res;
   };
   this.isString = p => {
-    if(typeof p !== 'string') {
+    if(typeof p !== 'string' && !(p instanceof String)) {
       throw new Error('The parameter should be only String type');
     }
   };
   this.isNumber = p => {
-    if(typeof p !== 'number') {
+    if(typeof p !== 'number' && !(p instanceof Number)) {
       throw new Error('The parameter should be only Number type');
     }
   };

@@ -52,7 +52,7 @@ console.log(decColumn('bb', 4));  // AX
 ```
 
 ### Loops:
-```js
+``` js
 const XLSXColumn = require('.');
 
 for(const column = new XLSXColumn('ZY'); column <= new XLSXColumn('AAC'); column.inc()) {
@@ -69,7 +69,7 @@ for(const column = new XLSXColumn('ZY'); column <= new XLSXColumn('AAC'); column
 ```
 
 ### Using XLSXColumn.range method based on iterator:
-```js
+``` js
 const { range } = require('.');
 
 for(const column of range('ZY', 'AAC')) {
