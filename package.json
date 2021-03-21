@@ -1,24 +1,33 @@
 {
   "name": "xlsx-column",
-  "version": "2.0.1",
-  "description": "Helps to work with *.xlsx column names.",
-  "main": "src/index.js",
+  "version": "2.1.0",
+  "description": "Works with *.xlsx column names.",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "build:clean": "rm -rf build/*",
+    "ts-compile": "tsc --declaration",
+    "my-compile": "node ../compile.js",
+    "build": "npm run build:clean && npm run ts-compile && npm run my-compile && npm test",
+    "publish:prepare": "mkdir -p ./build/build && mv ./build/* ./build/build; cp -r ./package* ./README.md ./build ./test",
+    "pu": "npm pu ./build",
+    "my-publish": "npm run publish:prepare && npm run pu"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArthurKa/xlsx-column.git"
   },
   "keywords": [
+    "xlsx-column",
     "xlsx",
     "Excel",
-    "xlsx table",
-    "Excel table",
-    "xlsx sheet",
-    "Excel sheet",
-    "xlsx column",
-    "Excel column"
+    "xlsx-table",
+    "Excel-table",
+    "xlsx-sheet",
+    "Excel-sheet",
+    "xlsx-column",
+    "Excel-column"
   ],
   "author": {
     "name": "ArthurKa",
@@ -30,6 +39,8 @@
   },
   "homepage": "https://github.com/ArthurKa/xlsx-column#readme",
   "devDependencies": {
-    "mocha": "^6.1.4"
+    "@types/node": "^14.14.35",
+    "mocha": "^6.1.4",
+    "typescript": "^4.2.3"
   }
 }

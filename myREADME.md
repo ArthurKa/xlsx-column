@@ -1,32 +1,33 @@
 <header>
 
-With `xlsx-column` you are convenient to operate with *.xlsx column names such as `A`, `Z`, `AA`, `AAB`, etc.
+With `<pkg.name>` you are convenient to operate with *.xlsx column names such as `A`, `Z`, `AA`, `AAB`, etc.
 
 <installation>
 
 ## Usage
 ### Class instance:
-``` js
-const XLSXColumn = require('.');
+```ts
+import XLSXColumn from './xlsx-column';
 
 // String constructor parameter
 const column = new XLSXColumn('Z');  // 26th column
 
 column.inc();  // Increment by 1
-console.log(column.toString());  // AA
+console.log(String(column));  // AA
 console.log(+column);  // 27  // 27th column starting from 1
 
 // Chaining is also possible
 console.log(column.dec(15).toString());  // L
 ```
-``` js
-const XLSXColumn = require('.');
+
+```ts
+import XLSXColumn from './xlsx-column';
 
 // Number constructor parameter
 const column = new XLSXColumn(26);  // 'Z' column
 
 column.inc(4);  // Increment by 4
-console.log(column.toString());  // AD
+console.log(String(column));  // AD
 console.log(+column);  // 30  // 30th column starting from 1
 
 // Chaining is also possible
@@ -34,10 +35,10 @@ console.log(column.dec().toString());  // AC
 ```
 
 ### Static methods with lost *this* context:
-``` js
-const { incColumn, decColumn, numToColumn, colToNumber } = require('.');
+```ts
+import { incColumn, decColumn, numToColumn, colToNumber } from './xlsx-column';
 
-console.log(numToColumn(2**14));  // XFD (max Excel column number)
+console.log(numToColumn(2 ** 14));  // XFD (max Excel column number)
 console.log(numToColumn(10e9));  // AFIPYQJP (and even more)
 
 console.log(colToNumber('A'));  // 1
@@ -52,8 +53,8 @@ console.log(decColumn('bb', 4));  // AX
 ```
 
 ### Loops:
-``` js
-const XLSXColumn = require('.');
+```ts
+import XLSXColumn from './xlsx-column';
 
 for(const column = new XLSXColumn('ZY'); column <= new XLSXColumn('AAC'); column.inc()) {
   console.log(column.toString());
@@ -69,8 +70,8 @@ for(const column = new XLSXColumn('ZY'); column <= new XLSXColumn('AAC'); column
 ```
 
 ### Using XLSXColumn.range method based on iterator:
-``` js
-const { range } = require('.');
+```ts
+import { range } from './xlsx-column';
 
 for(const column of range('ZY', 'AAC')) {
   console.log(column.toString());
