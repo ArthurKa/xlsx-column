@@ -7,7 +7,7 @@ With `<pkg.name>` you are convenient to operate with *.xlsx column names such as
 ## Usage
 ### Class instance:
 ```ts
-import XLSXColumn from './xlsx-column';
+import XLSXColumn from './xlsx-column/src';
 
 // String constructor parameter
 const column = new XLSXColumn('Z');  // 26th column
@@ -21,7 +21,7 @@ console.log(column.dec(15).toString());  // L
 ```
 
 ```ts
-import XLSXColumn from './xlsx-column';
+import XLSXColumn from './xlsx-column/src';
 
 // Number constructor parameter
 const column = new XLSXColumn(26);  // 'Z' column
@@ -36,7 +36,7 @@ console.log(column.dec().toString());  // AC
 
 ### Static methods with lost *this* context:
 ```ts
-import { incColumn, decColumn, numToColumn, colToNumber } from './xlsx-column';
+import { incColumn, decColumn, numToColumn, colToNumber } from './xlsx-column/src';
 
 console.log(numToColumn(2 ** 14));  // XFD (max Excel column number)
 console.log(numToColumn(10e9));  // AFIPYQJP (and even more)
@@ -54,7 +54,7 @@ console.log(decColumn('bb', 4));  // AX
 
 ### Loops:
 ```ts
-import XLSXColumn from './xlsx-column';
+import XLSXColumn from './xlsx-column/src';
 
 for(const column = new XLSXColumn('ZY'); column <= new XLSXColumn('AAC'); column.inc()) {
   console.log(column.toString());
@@ -71,7 +71,7 @@ for(const column = new XLSXColumn('ZY'); column <= new XLSXColumn('AAC'); column
 
 ### Using XLSXColumn.range method based on iterator:
 ```ts
-import { range } from './xlsx-column';
+import { range } from './xlsx-column/src';
 
 for(const column of range('ZY', 'AAC')) {
   console.log(column.toString());

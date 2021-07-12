@@ -3,7 +3,7 @@
 [![Commits](https://flat.badgen.net/github/commits/ArthurKa/xlsx-column)](https://github.com/ArthurKa/xlsx-column/commits/master)
 [![NPM-version](https://img.shields.io/badge/npm-v2.1.0-blue.svg?style=flat-square&&logo=npm "Current NPM-version")](https://www.npmjs.com/package/xlsx-column/v/2.1.0)
 [![Total downloads](https://img.shields.io/npm/dt/xlsx-column?style=flat-square "Total downloads for all the time")](https://npm-stat.com/charts.html?package=xlsx-column)
-[![Developed by](https://img.shields.io/badge/developed_by-ArthurKa-blueviolet.svg?style=flat-square "Have any questions? You are always welcome.")](https://github.com/ArthurKa/xlsx-column/issues)\
+[![Developed by](https://img.shields.io/badge/developed_by-ArthurKa-blueviolet.svg?style=flat-square "GitHub")](https://github.com/ArthurKa)\
 [![Publish size](https://flat.badgen.net/packagephobia/publish/xlsx-column@2.1.0?label=publish 'Publish size of xlsx-column@2.1.0')](https://packagephobia.now.sh/result?p=xlsx-column@2.1.0)
 [![Install size](https://flat.badgen.net/packagephobia/install/xlsx-column@2.1.0?label=install 'Install size of xlsx-column@2.1.0')](https://packagephobia.now.sh/result?p=xlsx-column@2.1.0)
 [![Minified size](https://img.shields.io/bundlephobia/min/xlsx-column@2.1.0?style=flat-square&label=minified "Minified size of xlsx-column@2.1.0")](https://bundlephobia.com/result?p=xlsx-column@2.1.0)
@@ -14,8 +14,8 @@
 With `xlsx-column` you are convenient to operate with *.xlsx column names such as `A`, `Z`, `AA`, `AAB`, etc.
 
 ## Installation
-`xlsx-column` is available via npm:
-``` bash
+`xlsx-column` is available via NPM:
+```bash
 $ npm i xlsx-column@2.1.0
 ```
 
@@ -102,7 +102,7 @@ for(const column of range('ZY', 'AAC')) {
 ```
 
 ## Testing
-``` bash
+```bash
 $ npm test
 ```
 
