@@ -16,6 +16,7 @@ const instanceMethods = [
   'dec',
 ];
 const actionTestCases = [
+  // eslint-disable-next-line no-sparse-arrays
   ['A', , 'B', 1, 2],
   ['SAME', 0, 'SAME', 334963, 334963],
   ['A', 2, 'C', 1, 3],
@@ -92,11 +93,11 @@ describe('Basic behaviour of static methods', () => {
       [8514, 'LOL'],
       [7577, 'KEK'],
       [16169, 'WWW'],
-      [2**14, 'XFD', '2^14', 'last column in Excel'],
+      [2 ** 14, 'XFD', '2^14', 'last column in Excel'],
       [1e9, 'CFDGSXL', '10^9', 'even more than Excel can'],
     ];
     for(const [val, res, valStr, msg] of actionTestCases) {
-      it(`${className}.numToColumn(${valStr || val}) equals ${res}${msg ? ` (${msg})`: ''}`, () => {
+      it(`${className}.numToColumn(${valStr || val}) equals ${res}${msg ? ` (${msg})` : ''}`, () => {
         assert.strictEqual(XLSXColumn.numToColumn(val), res);
       });
     }
@@ -111,7 +112,7 @@ describe('Basic behaviour of static methods', () => {
       ['LOL', 8514],
       ['KEK', 7577],
       ['WWW', 16169],
-      ['XFD', 2**14, '2^14'],
+      ['XFD', 2 ** 14, '2^14'],
       ['CFDGSXL', 1e9, '10^9'],
     ];
     for(const [val, res, resStr] of actionTestCases) {
@@ -235,11 +236,11 @@ describe('Static methods with lost *this* context', () => {
       [8514, 'LOL'],
       [7577, 'KEK'],
       [16169, 'WWW'],
-      [2**14, 'XFD', '2^14', 'last column in Excel'],
+      [2 ** 14, 'XFD', '2^14', 'last column in Excel'],
       [1e9, 'CFDGSXL', '10^9', 'even more than Excel can'],
     ];
     for(const [val, res, valStr, msg] of actionTestCases) {
-      it(`numToColumn(${valStr || val}) equals ${res}${msg ? ` (${msg})`: ''}`, () => {
+      it(`numToColumn(${valStr || val}) equals ${res}${msg ? ` (${msg})` : ''}`, () => {
         assert.strictEqual(numToColumn(val), res);
       });
     }
@@ -264,7 +265,7 @@ describe('Ranges', () => {
         let i = 0;
         for(const column of XLSXColumn.range(from, to)) {
           const col = column.toString();
-          let j = i++;
+          const j = i++;
           it(res[j], () => {
             assert.strictEqual(col, res[j]);
           });

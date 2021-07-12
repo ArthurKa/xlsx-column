@@ -16,11 +16,11 @@ export function strOrNum(p: unknown): 'str' | 'num' {
   try {
     isString(p);
     res = 'str' as const;
-  } catch(e) {}
+  } catch {}
   try {
     isNumber(p);
     res = 'num' as const;
-  } catch(e) {}
+  } catch {}
 
   if(!res) {
     throw new Error('The parameter should be one of type String or Number');
@@ -29,7 +29,7 @@ export function strOrNum(p: unknown): 'str' | 'num' {
   return res;
 }
 export function isInteger(n: number): void | never {
-  if(!(isFinite(n) && Math.floor(n) === n)) {
+  if(!(Number.isFinite(n) && Math.floor(n) === n)) {
     throw new Error('The number should be integer');
   }
 }
@@ -54,6 +54,7 @@ export const combine = {
     if(type === 'str') {
       stringNotEmpty(p as string);
       hasLettersOnly(p as string);
+      // eslint-disable-next-line no-param-reassign
       p = toNumber((p as string).toUpperCase());
     } else {
       isInteger(p as number);

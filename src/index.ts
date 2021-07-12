@@ -41,11 +41,11 @@ export function range(from: string | number, to: string | number) {
   const column = new XLSXColumn(from);
   const lastColumn = new XLSXColumn(to);
   return {
-    [Symbol.iterator]: function*() {
+    *[Symbol.iterator]() {
       while(column <= lastColumn) {
         yield column;
         column.inc();
       }
-    }
+    },
   };
 }
