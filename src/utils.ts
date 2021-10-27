@@ -4,7 +4,7 @@ export function toString(n: number) {
   const arr = [];
   do {
     arr.push((n - 1) % 26);
-  // eslint-disable-next-line no-param-reassign, no-cond-assign
+    // eslint-disable-next-line no-param-reassign, no-cond-assign
   } while(n = Math.floor((n - 1) / 26));
 
   return arr.reverse().map(e => String.fromCharCode(e + zero)).join('');

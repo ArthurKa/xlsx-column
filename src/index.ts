@@ -14,7 +14,7 @@ type XLSXColumn = {
   dec(n?: number): XLSXColumn;
   valueOf(): number;
   toString(): string;
-}
+};
 
 const XLSXColumn = function(p: string | number) {
   let column = checks.combine.forConstructor(p);

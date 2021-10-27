@@ -16,11 +16,11 @@ export function strOrNum(p: unknown): 'str' | 'num' {
   try {
     isString(p);
     res = 'str' as const;
-  } catch {}
+  } catch(e) {}
   try {
     isNumber(p);
     res = 'num' as const;
-  } catch {}
+  } catch(e) {}
 
   if(!res) {
     throw new Error('The parameter should be one of type String or Number');

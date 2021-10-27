@@ -1,6 +1,7 @@
 'use strict';
 
 const assert = require('assert');
+// eslint-disable-next-line import/no-unresolved
 const XLSXColumn = require('..');
 
 const className = 'XLSXColumn';
